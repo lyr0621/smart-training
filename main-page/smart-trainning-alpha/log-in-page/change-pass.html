@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="/anime/lib/anime.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change your password</title>
+    <style>
+        body {
+            background-color: rgb(255,215,0);
+        }
+        .title {
+            border: 2px dotted black;
+            border-radius: 10px;
+            padding: 3px 20px;
+            width: 150px;
+        }
+        #line1 {
+            text-align: center;
+            font-size: 20px;
+            font-family: cursive;
+        }
+        .log-in {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 10px;
+            width: 600px;
+            float: right;
+        }
+        .log-in h1 {
+            text-align: center;
+        }
+        #username {
+            margin-left: 135px;
+            border-radius: 2px;
+            border: 1px solid black;
+            width: 300px;
+            font-size: medium;
+            padding: 3px;
+        }
+        #email {
+            margin-left: 135px;
+            margin-top: 15px;
+            border-radius: 2px;
+            border: 1px solid black;
+            width: 300px;
+            font-size: medium;
+            padding: 3px;
+        }
+        #password {
+            margin-left: 135px;
+            margin-top: 15px;
+            border-radius: 2px;
+            border: 1px solid black;
+            width: 300px;
+            font-size: medium;
+            padding: 3px;
+        }
+        #submit {
+            margin-top: 30px;
+            border-radius: 2px;
+            border: 0px solid black;
+            margin-left: 135px;
+            width: 305px;
+            font-size: 20px;
+            background-color: rgb(143,230,0);
+            padding: 3px 5px;
+        }
+        #submit:hover {
+            background-color: rgba(143,230,0,0.8);
+            font-size: 21.5px;
+            padding: 2px 5px;
+        }
+        #fgpass {
+            margin-left: 200px;
+        }
+        #nac {
+            margin-left: 20px;
+        }
+        #otherc {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1041.0" data-gr-ext-installed="">
+    <div class="title">
+        <p id="line1">Quick Learning3.0</p>
+    </div>
+    <div class="log-in">
+        <h1>Change your password here</h1>
+        <form action="./change_password.php" method="post">
+        <input id="username" name="username" placeholder="please enter your username" type="text">
+        <input id="email" name="email" placeholder="please enter your email" type="email">
+        <input id="password" name="password" placeholder="your new password" type="password"> 
+        <button id="submit" type="submit">submit</button>
+        <p id="otherc"><a href="./log-in-page.html" id="nac">Back to log-in page</a></p>
+        </form>
+    </div>
+    <script>
+        //go to judge.php if submit button is clicked
+        document.getElementById("submit").onclick = function() {
+            window.location.href = "./change_password.php";
+        }
+    </script>
+
+<!--for animations-->
+<script>
+    var myAnimation1 = anime({
+        targets: ['.log-in',],
+        translateX: [
+            { value: -500, duration: 0 },
+            { value: 0, duration: 1000 }
+        ],
+        scale: [
+            { value: 0.5, duration: 0 },
+            { value: 1, duration: 1000 }
+        ],
+    })
+    var myAnimation2 = anime({
+        targets: ['.title',],
+        translateX: [
+            { value: +500, duration: 0 },
+            { value: 0, duration: 1000 }
+        ],
+        scale: [
+            { value: 0.5, duration: 0 },
+            { value: 1, duration: 1000 }
+        ],
+    })
+
+
+    var hover_username = anime({
+        targets: '#username',
+        scale: [
+        { value: 1.2, duration: 1000 },
+        { value: 1, duration: 1000 },
+        ],
+        autoplay: false,
+    })
+    document.querySelector("#username").addEventListener("mouseover", function () {
+        hover_username.play();
+    })
+
+
+    var hover_password = anime({
+        targets: '#password',
+        scale: [
+        { value: 1.2, duration: 1000 },
+        { value: 1, duration: 1000 },
+        ],
+        autoplay: false,
+    })
+    document.querySelector("#password").addEventListener("mouseover", function () {
+        hover_password.play();
+    })
+
+
+    var hover_submit = anime({
+        targets: '#submit',
+        scale: [
+        { value: 1.2, duration: 1000 },
+        { value: 1, duration: 1000 },
+        ],
+        autoplay: false,
+    })
+    document.querySelector("#submit").addEventListener("mouseover", function () {
+        hover_submit.play();
+    })
+
+    var hover_email = anime({
+        targets: '#email',
+        scale: [
+        { value: 1.2, duration: 1000 },
+        { value: 1, duration: 1000 },
+        ],
+        autoplay: false,
+    })
+    document.querySelector("#email").addEventListener("mouseover", function () {
+        hover_email.play();
+    })
+
+</script>

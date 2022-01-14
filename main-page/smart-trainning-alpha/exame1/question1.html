@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question number1</title>
+    <style>
+        body {
+            background-color: rgb(255, 215, 0);
+        }
+
+        .box1 {
+            background-color: rgb(255, 255, 255);
+            width: 300px;
+            border:white dotted 2px;
+            border-radius: 15px;
+            margin: auto;
+            text-align: center;
+            padding: 10px 30px;
+            transition: 0.2s ease-in-out;
+            transform: scaleX(0);
+        }
+
+        #do1 {
+            transform: scaleX(1);
+        }
+
+        .box1 h1 {
+            margin: 0px;
+            font-weight: normal;
+            transition: 0.2s ease-in-out;
+            transform: scaleY(0);
+        }
+
+        #do2 {
+            transform: scaleY(1);
+        }
+
+        .box2 {
+            background-color: whitesmoke;
+            width: 300px;
+            margin-top: 50px;
+            border:black solid 1px;
+            border-radius: 15px;
+            text-align: center;
+            padding: 8px 10px;
+            transition: 0.2s ease-in-out;
+            transform: scaleX(0);
+        }
+
+        .box2 p {
+            margin: 0;
+            transition: 0.2s ease-in-out;
+            transform: scaleY(0);
+        }
+
+
+        #do3 {
+            transform: scaleX(1);
+        }
+
+        #do4 {
+            transform: scaleY(1);
+        }
+
+        #a{
+            background-color: rgba(210,210,210,0.8)
+        }
+
+        #b{
+            background-color: rgba(210,210,210,0.8)
+        }
+
+        #c{
+            background-color: rgba(210,210,210,0.8)
+        }
+
+        #d{
+            background-color: rgba(210,210,210,0.8)
+        }
+
+        .choices {
+            border: black solid 0px;
+            border-radius: 15px;
+            background-color: white;
+            padding: 10px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h1>question number 1</h1>
+        <script>
+            setTimeout(function() {
+                var pic = document.querySelector(".pic")
+                var box1 = document.querySelector(".box1")
+                var box1_h1 = document.querySelector(".box1 h1")
+                var box2 = document.querySelector(".box2")
+                var box2_p = document.querySelector(".box2 p")
+                var choices = document.querySelector(".choices")
+                box1.id = "do1"
+                box1_h1.id = "do2"
+                box2.id = "do3"
+                box2_p.id = "do4"
+                choices.id = "choices"
+                pic.id="pic"
+            },50)
+        </script>
+    </div>
+
+    <div align="center"><img src="第一题图.png" alt="" class="pic"></div>
+    <style>
+        .pic {
+            margin-top: 20px;
+            width: 500px;
+            border-radius: 15px;
+            transform: scaleX(0);
+            transition: 0.2s ease-in-out;
+        }
+        #pic {
+            transform: scaleX(1);
+        }
+    </style>
+    <script>
+    </script>
+
+    <div class="box2">
+        <p>choose the right statement from A B C D</p>
+    </div>
+    <style>
+        .choices {
+            transition: 0.2s ease-in-out;
+            transform: scaleX(0);
+        }
+
+        #choices {
+            transform: scaleX(1);
+        }
+    </style>
+    <div class="choices">
+        <!--A选项-->
+        <p class="a"><input type="checkbox" id="A"> A. Column A is greater</p>  <!--A选项内容在这里-->
+        <script>
+            var A = document.querySelector("#A")
+            //console.log(A.checked)
+            var checked1 = false
+            A.addEventListener("click",function() {
+                let a = document.querySelector(".a")
+                if (checked1) {
+                    a.id = ""
+                    checked1 = false
+                }
+                else{
+                    a.id = "a"
+                    checked1 = true
+                    checked2 = false
+                    document.querySelector(".b").id = ""
+                    document.querySelector("#B").checked = false
+                    checked3 = false
+                    document.querySelector(".c").id = ""
+                    document.querySelector("#C").checked = false
+                    checked4 = false
+                    document.querySelector(".d").id = ""
+                    document.querySelector("#D").checked = false
+                }
+            })
+        </script>
+
+        <!--B选项-->
+        <p class="b"><input type="checkbox" id="B"> B. Column B is greater </p>
+        <script>
+            var B = document.querySelector("#B")
+            //console.log(A.checked)
+            var checked2 = false
+            B.addEventListener("click",function() {
+                let a = document.querySelector(".b")
+                if (checked2) {
+                    a.id= ""
+                    checked2 = false
+                }
+                else{
+                    a.id = "b"
+                    checked2 = true
+                    checked1 = false
+                    document.querySelector(".a").id = ""
+                    document.querySelector("#A").checked = false
+                    checked3 = false
+                    document.querySelector(".c").id = ""
+                    document.querySelector("#C").checked = false
+                    checked4 = false
+                    document.querySelector(".d").id = ""
+                    document.querySelector("#D").checked = false
+                }
+            })
+        </script>
+
+        <!--C选项-->
+        <p class="c"><input type="checkbox" id="C"> C. The two parts are equal </p>
+        <script>
+            var C = document.querySelector("#C")
+            //console.log(A.checked)
+            var checked3 = false
+            C.addEventListener("click",function() {
+                let c = document.querySelector(".c")
+                if (checked3) {
+                    c.id= ""
+                    checked3 = false
+                }
+                else{
+                    c.id = "c"
+                    checked3 = true
+                    checked1 = false
+                    document.querySelector(".a").id = ""
+                    document.querySelector("#A").checked = false
+                    checked2 = false
+                    document.querySelector(".b").id = ""
+                    document.querySelector("#B").checked = false
+                    checked4 = false
+                    document.querySelector(".d").id = ""
+                    document.querySelector("#D").checked = false
+                }
+            })
+        </script>
+
+        <!--D选项-->
+        <p class="d"><input type="checkbox" id="D"> D. Not enough information is given </p>
+        <script>
+            var D = document.querySelector("#D")
+            //console.log(A.checked)
+            var checked4 = false
+            D.addEventListener("click",function() {
+                let d = document.querySelector(".d")
+                if (checked4) {
+                    d.id= ""
+                    checked4 = false
+                }
+                else{
+                    d.id = "d"
+                    checked4 = true
+                    checked1 = false
+                    document.querySelector(".a").id = ""
+                    document.querySelector("#A").checked = false
+                    checked2 = false
+                    document.querySelector(".b").id = ""
+                    document.querySelector("#B").checked = false
+                    checked3 = false
+                    document.querySelector(".c").id = ""
+                    document.querySelector("#C").checked = false
+                }
+            })
+        </script>
+
+        <!--submit按钮-->
+        <button id="submit">Submit</button>
+        <style>
+            .check {
+                margin: auto;
+                text-align: center;
+                border: #000000 solid 1px;
+                border-radius: 10px;
+                transition: 0.35s ease-in-out;
+                display: none;
+            }
+
+            #check {
+                display: inline;
+                transform:rotate(360deg);
+            }
+
+            #invisible_button {
+                display: none;
+            }
+        </style>
+        <script>
+            var submit = document.querySelector("#submit")
+            var my_answers
+            submit.addEventListener("click", function(){
+                my_answers = []
+                if (checked1) {
+                    my_answers.push("A")
+                }
+
+                if (checked2) {
+                    my_answers.push("B")
+                }
+
+                if (checked3) {
+                    my_answers.push("C")
+                }
+
+                if (checked4) {
+                    my_answers.push("D")
+                }
+                right_answers = ['D']
+
+                var right = (my_answers.toString() == right_answers.toString())  //要转化成string才能进行比较
+                var result_box = document.querySelector(".result")
+                var result = document.querySelector("#index")
+                result_box.id = "result"
+
+                if (right) {
+                    result.innerHTML = "answer correct"
+                    result.setAttribute('class','green')
+                }
+                else {
+                    var num = 0
+                    var checked_answers = []
+                    let too_much = false
+                    for(let i = 0, j = my_answers.length; i<j; i++) {
+                        if (right_answers.includes(my_answers[i])){   //include用于判断一个元素是否在列表中
+                            num++
+                            checked_answers.push(my_answers[i])
+                        }
+
+                        else {
+                            too_much = true
+                        }
+                    }
+
+                    if (too_much & num != 0) {
+                        result.innerHTML = "you've got one of the correct answers:"+checked_answers[0]+","+" but one of your answers is incorrect"
+                        too_much = false
+                        result.setAttribute('class','yellow')
+                        submit.id = "invisible_button"
+                        document.querySelector(".next").id = "show"
+                        document.querySelector(".next a").id = "show2"
+                        return
+                    }
+
+                    else if (num == right_answers.length) {
+                        if (num > 1){
+                            result.innerHTML = "your answers are all correct"
+                            result.setAttribute('class','green')
+                        }
+                        else {
+                            result.innerHTML = "your answer is correct"
+                            result.setAttribute('class','green')
+                        }
+                    }
+
+                    if (num == 0) { 
+                        result.innerHTML = "none of your answers is correct"
+                        result.setAttribute('class','red')
+                    }
+                    else if (num == 1){
+                        result.innerHTML = "you've got one of the correct answers:",checked_answers[0]
+                        result.setAttribute('class','yellow')
+                    }
+                    else if (num == 2){
+                        result.innerHTML = "you've got two of the correct answers:",checked_answers[0],checked_answers[1]
+                        result.setAttribute('class','yellow')
+                    }
+                    else if (num == 3){
+                        result.innerHTML = "you've got three of the correct answers:",checked_answers[0],checked_answers[1],checked_answers[2]
+                        result.setAttribute('class','yellow')
+                    }
+                    else if (num == 4){
+                        result.innerHTML = "you've got four of the correct answers:",checked_answers[0],checked_answers[1],checked_answers[2],checked_answers[3]
+                        result.setAttribute('class','yellow')
+                    }
+                }
+                submit.id = "invisible_button"
+                document.querySelector(".next").id = "show"
+                document.querySelector(".next a").id = "show2"
+            })
+        </script>
+    </div>
+
+    <!--－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－-->
+
+    <div class="result">
+        <p id="index">#index#</p>
+    </div>
+    <style>
+        .result {
+            margin-top: 40px;
+            border: black solid 1px;
+            border-radius: 15px;
+            text-align: center;
+            padding: 5px;
+            transition: 0.2s ease-in-out;
+            transform: scaleX(0);
+            background-color: white;
+        }
+
+        #result {
+            transform: scaleX(1);
+        }
+
+        #index {
+            font-size: 30px;
+            margin: 0;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+    </style>
+
+    <!--－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－-->
+
+    <div class="next">
+        <a href="final page.html">next question-></a>
+        <style>
+            .next {
+                margin-top: 30px;
+                background-color:rgb(2, 196, 245);
+                float:right;
+                text-align: center;
+                width: 150px;
+                border-radius: 10px;
+                padding: 10px;
+                transform: scaleX(0);
+                transition: 0.25s ease-in-out;
+                transform-origin: right;
+            }
+
+            .next a {
+                color:rgba(229, 255, 0, 0.822);
+                transform: scaleY(0);
+                transition: 0.3s ease-in-out;
+            }
+
+            #show {
+                transform: scaleX(1);
+            }
+
+            #show2 {
+                transform: scaleY(1);
+            }
+        </style>
+    </div>
+</body>
+</html>
