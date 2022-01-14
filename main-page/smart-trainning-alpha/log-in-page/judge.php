@@ -7,7 +7,8 @@
     <title>skiping...</title>
     <style>
         body {
-            background-color: rgb(255, 215, 0);
+            background-color: rgb(35, 35, 35);
+            color: whitesmoke;
         }
     </style>
 </head>
