@@ -28,13 +28,20 @@
     $password = $_POST['password'];
     $email = $_POST['email'];
     // check if username already exists
+    //make sure username dosn't contain any special characters
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+        echo "Username must contain only letters and numbers";
+        //echo a link to redirect to the login page
+        echo "<a href='log-in-page.html'>Go back to log in page</a>";
+        exit();
+    }
     $sql = "SELECT * FROM users WHERE username = '$username'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
         echo "<h1>Username already exists</h1>";
         echo "faild: Username already exists";
         echo "<br>";
-        echo "<a href='new_account.html'>try again</a>";
+        echo "<a href='new-account.html'>try again</a>";
     } else {
         // insert new user into database
         $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
@@ -48,7 +55,7 @@
             echo "<br>";
             echo "email: " . $email;
             echo "<br>";
-            echo "<a href='log_in.php'>log in</a>";
+            echo "<a href='./log-in-page.html'>log in</a>";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
