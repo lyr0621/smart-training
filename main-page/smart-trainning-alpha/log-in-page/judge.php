@@ -7,7 +7,6 @@
     <style>
         body {
   background: linear-gradient(to right, #ff47a1 0%, #ff9f4d 100%);
-  color: 
 }
 
 #sky {
@@ -44,22 +43,23 @@
   overflow: hidden;
 }
 .alert {
-    text-align: center;
+  text-align: center;
 }
-p {
-    left: 900px;
-    bottom: 100px;
-    position: absolute;
-}
-a:hover {
-    text-decoration: none;
-    font-size: 20px;
+.alert2 {
+  margin: auto;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
     </style>
 </head>
 <!-- partial:index.partial.html -->
 <div id="root" />
 <!-- partial -->
+<script src='/js/react.production.min.js'></script>
+<script src='/js/react-dom.production.min.js'></script>
+<script src='/js/anime.min.js'></script><script  src="./script.js"></script>
 <script>
     function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} // Twinkling Night Sky by Sharna
 
@@ -186,15 +186,17 @@ ReactDOM.render( /*#__PURE__*/React.createElement(StarrySky, null), document.get
             echo "user name: " . $row['username'] . "<br>";
             echo "email: " . $row['email'] . "<br><br><br><br><br><br>";
             echo "you will be redirected in a second...<br>";
-            echo "<script>setTimeout(function(){window.location.href='../mainpage.php';}, 6000);</script>";
+            echo "<script>setTimeout(function(){window.location.href='../mainpage.php';}, 3000);</script>";
             echo "</div>" . "<br>";            //输出一些基本信息
         }else{   //否则报错
+            echo "<div class='alert2'>";
             echo "fail to login, please check your password";
             echo "<p>click <a href='./log-in-page.html'>here</a> to go back</p>";
+            echo "</div>" . "<br>";
         }
     ?>
 </body>
 </html>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.12.0/umd/react.production.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.12.0/umd/react-dom.production.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js'></script><script  src="./script.js"></script>
+<script src='/js/react.production.min.js'></script>
+<script src='/js/react-dom.production.min.js'></script>
+<script src='/js/anime.min.js'></script><script  src="./script.js"></script>

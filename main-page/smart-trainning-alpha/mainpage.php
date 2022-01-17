@@ -251,12 +251,13 @@
                             if (!$db) {
                                 die('Could not connect: ' . mysqli_error($db));
                             }
-                            echo "welcome, $user_name<br>";
+                            
                             $sql = "SELECT * FROM users WHERE username = '$user_name';";
                             $result = mysqli_query($db, $sql);
                             if ($result) {
                                 $row = mysqli_fetch_array($result);
                                 if ($user_password == $row['password']) {
+                                    echo "<div style='background-color: gray; width: 10%; border-radius:8px; padding: 3px;'>welcome, $user_name<br></div>";
                                     echo "<li><a class='link2' href='/main-page/smart-trainning-alpha/log-in-page/log-in-page.html'>log out user$user_name</a></li>";
                                     //echo a javascript, if the a tag with class "link" is pressed, delete the cookie password and username
                                     echo "<script>

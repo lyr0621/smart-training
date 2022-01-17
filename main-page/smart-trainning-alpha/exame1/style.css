@@ -1,0 +1,50 @@
+#body {
+    position: absolute;
+    z-index: 999;
+    top:320px;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.box1 {
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    border:white dotted 2px;
+    border-radius: 15px;
+    margin: auto;
+    text-align: center;
+    padding: 10px 30px;
+    margin-top: 60px;
+}
+
+.pic {
+    margin-top: 20px;
+    border-radius: 15px;
+    height: 500px;
+}
+
+.box2 {
+    background-color: whitesmoke;
+    width: 60%;
+    top: 60px;
+    margin: auto;
+    margin-top: 30px;
+    border:black solid 1px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 8px 10px;
+}
+
+.choices {
+    border: black solid 0px;
+    border-radius: 15px;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    transform: scaleY(0);
+}
+
+.box1 h1 {
+    margin: 0px;
+    font-weight: normal;
+}

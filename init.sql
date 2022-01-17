@@ -6,4 +6,3 @@ create table users (
   created_at timestamp default now()
 );
 insert into users (username, email, password) values ('admin', '2538784529@qq.com', 'admin');
-create table 
