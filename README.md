@@ -1,2 +1,2 @@
 # smart-training
-a online training website to help students on their tests
+an online training website to help students on their tests
